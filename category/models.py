@@ -4,7 +4,7 @@ from django.db import models
 
 class Category(models.Model):
     category_name = models.CharField(max_length=100)
-    slug = models.CharField(max_length=100,unique=True, blank=True, null=True)
+    slug = models.SlugField(max_length=100,unique=True, blank=True, null=True)
     description = models.TextField(max_length=500, blank=True, null=True)
     cat_image = models.ImageField(upload_to='images/categories',blank=True,default='default.jpg')
 
